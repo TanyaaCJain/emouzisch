@@ -33,8 +33,8 @@ app.post('/fetch_external_image', async (req, res) => {
   }
 })
 
-const envPORT = process.env.PORT
-app.listen(envPORT, () => console.log('Listening on port' + envPORT + '!'))
+const envPORT = process.env.PORT || 3000
+app.listen(envPORT, () => console.log('Listening on port ' + envPORT + '!'))
 
 function request(url, returnBuffer = true, timeout = 10000) {
   return new Promise(function(resolve, reject) {
