@@ -15,8 +15,9 @@ app.use(express.static(path.join(__dirname, './public')))
 app.use(express.static(path.join(__dirname, './weights')))
 app.use(express.static(path.join(__dirname, './dist')))
 
-app.get('/', (req, res) => res.redirect('/webcamFaceExpressionRecognition.html'))
-app.get('/webcam_face_expression_recognition', (req, res) => res.sendFile(path.join(viewsDir, 'webcamFaceExpressionRecognition.html')))
+//app.get('/', (req, res) => res.redirect('/webcamFaceExpressionRecognition.html'))
+//app.get('/webcam_face_expression_recognition', (req, res) => res.sendFile(path.join(viewsDir, 'webcamFaceExpressionRecognition.html')))
+app.get('/', (req, res) => res.sendFile(path.join(viewsDir, 'webcamFaceExpressionRecognition.html')))
 
 app.post('/fetch_external_image', async (req, res) => {
   const { imageUrl } = req.body
@@ -32,7 +33,7 @@ app.post('/fetch_external_image', async (req, res) => {
   }
 })
 
-app.listen(3000, () => console.log('Listening on port 3000!'))
+app.listen(443, () => console.log('Listening on port 443!'))
 
 function request(url, returnBuffer = true, timeout = 10000) {
   return new Promise(function(resolve, reject) {
