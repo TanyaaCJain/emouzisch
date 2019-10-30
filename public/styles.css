@@ -1,0 +1,116 @@
+html {
+  background: #FF94B5;
+  background-blend-mode: overlay;
+  opacity: 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+f {
+  background: -moz-linear-gradient(43deg, #FF0000 0%, #FF2E9A 58%, #FF63A2 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #FF0000), color-stop(58%, #FF2E9A), color-stop(100%, #FF63A2)); /* safari4+,chrome */
+  background: -webkit-linear-gradient(43deg, #FF0000 0%, #FF2E9A 58%, #FF63A2 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(43deg, #FF0000 0%, #FF2E9A 58%, #FF63A2 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(43deg, #FF0000 0%, #FF2E9A 58%, #FF63A2 100%); /* ie10+ */
+  background: linear-gradient(47deg, #FF0000 0%, #FF2E9A 58%, #FF63A2 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF0000', endColorstr='#FF63A2',GradientType=1 ); /* ie6-9 */
+  opacity: 50%;
+  height: inherit;
+  width: inherit;
+}
+
+label, 
+[type="checkbox"] + label:before,
+[type="checkbox"]:not(.filled-in) + label:after,
+input,
+p {
+  color: #fff!important;
+  border-bottom: #fff;
+}
+
+.btn {
+  background: #111111!important;
+  border-radius: 30px!important;
+}
+
+
+.page-container {
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 20px;
+    padding-left: 280px;
+    display: inline-flex !important;
+  }
+
+  @media only screen and (max-width : 992px) {
+    .page-container {
+      padding-left: 0;
+      display: flex !important;
+    }
+  }
+  
+  #navbar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .side-by-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .side-by-side >* {
+    margin: 0 5px;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  .margin-sm {
+    margin: 5px;
+  }
+  
+  .margin {
+    margin: 20px;
+  }
+  
+  .button-sm {
+    padding: 0 10px !important;
+  }
+  
+  .pad-sides-sm {
+    padding: 0 8px !important;
+  }
+  
+  #github-link {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+  }
+  
+  #overlay, .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #facesContainer canvas {
+    margin: 10px;
+  }
