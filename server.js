@@ -33,7 +33,8 @@ app.post('/fetch_external_image', async (req, res) => {
   }
 })
 
-app.listen(443, () => console.log('Listening on port 443!'))
+const envPORT = process.env.PORT
+app.listen(envPORT, () => console.log('Listening on port' + envPORT + '!'))
 
 function request(url, returnBuffer = true, timeout = 10000) {
   return new Promise(function(resolve, reject) {
