@@ -21,5 +21,3 @@ jobs:
       run: |
         npm i
         npm start
-      env:
-        CI: true
