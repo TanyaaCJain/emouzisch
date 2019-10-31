@@ -16,13 +16,9 @@
     <div class="progress" id="loader">
       <div class="indeterminate"></div>
     </div>
-    <!--div style="position: relative" class="margin">
+    <div style="position: relative" class="margin">
       <video onloadedmetadata="onPlay(this)" id="inputVideo" autoplay muted playsinline></video>
       <canvas id="overlay" />
-    </div-->
-    <div style="position: relative" class="margin">
-        <video onplay="onPlay(this)" id="inputVideo" autoplay muted></video>
-        <canvas id="overlay" />
     </div>
 
     <div class="row side-by-side">
@@ -114,6 +110,17 @@
         >
           <i class="material-icons left">+</i>
         </button>
+        <button
+          class="waves-effect waves-light btn"
+          id="work"
+          onclick="buttonWork()"
+        >
+          <i class="material-icons left">Work</i>
+        </button>
+        <div class="row">
+          <label for="displayTheResult">Result</label>
+          <p id="displayTheResult" class="bold"> </p>
+        </div>
       </div>
     </span>
     <!-- tiny_face_detector_controls -->
@@ -174,6 +181,18 @@
       updateTimeStats(Date.now() - ts)
 
       if (result) {
+        var max_val = 0
+        var max_key = ''
+
+        for (var key in result.expressions) {
+          if (result.expressions[key] > max_val) {
+            max_val = result.expressions[key]
+            max_key = key
+          }
+        }
+
+        document.getElementById("displayTheResult").innerHTML = max_key;
+
         const canvas = $('#overlay').get(0)
         const dims = faceapi.matchDimensions(canvas, videoEl, true)
 
@@ -204,10 +223,25 @@
     function updateResults() {}
 
     $(document).ready(function() {
-      renderNavBar('#navbar', 'webcam_face_expression_recognition')
+      //renderNavBar('#navbar', 'webcam_face_expression_recognition')
       initFaceDetectionControls()
       run()
     })
+
+    function buttonWork() {
+      var expressed_result = document.getElementById("displayTheResult").innerHTML;
+      if (expressed_result == "happy") {
+        url = 'https://www.youtube.com/watch?v=9M_FlkAiTSo';
+      }
+      else if (expressed_result == "sad") {
+        url = 'https://www.youtube.com/watch?v=5VP-tau_XfU';
+      }
+      else if (expressed_result == "disgusted") {
+        url = 'https://www.youtube.com/watch?v=aGl-1nwahCA';
+      }
+      var win = window.open(url, '_blank');
+      win.focus();
+    }
   </script>
 </body>
 </html>
