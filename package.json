@@ -8,7 +8,7 @@
   "author": "tanyaacjain",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "gh-pages": "^2.1.1",
     "request": "^2.88.0",
     "start": "^5.1.0"
